@@ -52,8 +52,9 @@
             changeTheme();
             
             function checkIframe() {
-
+                console.log(1);
                 if (iframe && iframe.contentWindow.area) {
+                    
                     var area = iframe.contentWindow.area;
                     areaHA.innerText = (area / 10000).toFixed(2) + " Hectares(ha)";
                     areaKM.innerText = (area / 1000000).toFixed(2) + " Quilômetros quadrados (km²)";
