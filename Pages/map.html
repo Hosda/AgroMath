@@ -52,7 +52,9 @@
             changeTheme();
             
             function checkIframe() {
-                console.log(1);
+                if (iframe.contentWindow.area) {
+                    console.log(1);
+                }
                 if (iframe && iframe.contentWindow.area) {
                     
                     var area = iframe.contentWindow.area;
