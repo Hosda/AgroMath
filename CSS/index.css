@@ -9,6 +9,7 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    font-size: 2px;
     font-family: 'CooperLakeGothic', sans-serif;
     margin: 0;
     background-color: var(--secundario);
