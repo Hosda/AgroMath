@@ -52,6 +52,7 @@
             changeTheme();
             
             function checkIframe() {
+
                 if (iframe && iframe.contentWindow.area) {
                     var area = iframe.contentWindow.area;
                     areaHA.innerText = (area / 10000).toFixed(2) + " Hectares(ha)";
