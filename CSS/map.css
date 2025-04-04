@@ -34,6 +34,7 @@ iframe {
 .comentario {
     padding: 10px;
     width: 78.5vw;
+    font-size: 2.5vw;
     text-align: justify;
     border: none;
     background-color: var(--secundario);

@@ -35,12 +35,13 @@ iframe {
     padding: 10px;
     width: 78.5vw;
     text-align: justify;
+    font-size: 2.5vw;
     border: none;
     background-color: var(--secundario);
     border-radius: 20px;
 }
 .button {
-    padding: 30px;
+    padding: 2vw;
     width: 20vw;
     color: #ffff;
     transform: translate(25vw, 0%);
@@ -50,7 +51,7 @@ iframe {
     border-radius: 20px;
 }
 .button:hover {
-    padding: 30px;
+    padding: 2vw;
     width: 20vw;
     
     transform: translate(25vw, 0%);
