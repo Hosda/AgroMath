@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="/CSS/map.css">
+</head>
+<body>
+    
+    <div class="comentario">
+        <h1 style="font-size: 3.5vw; text-align: center;">Como usar o AgroMath?</h1>
+        <p style="padding-left: 2%;">-Usar o AgroMath é simples e intuitivo, basta selecionar os limites do seu terreno clicando com o mouse em cada extremidade. Ao concluir, pressione a tecla Espaço, e o AgroMath calculará automaticamente a área da sua propriedade.</p>
+    </div>
+    <p></p>
+    <div id="iframe-container">
+        <iframe id="iframe" src="ol_map.html"></iframe>
+    </div>
+    <div class="comentario">
+        <h1 style="font-size: 3.5vw; text-align: center;">Sua área:</h1>
+        <p id="km" style="padding-left: 10%;">Selecione seu terreno no mapa primeiro</p>
+        <p id="ha" style="padding-left: 10%;"></p>
+    </div>
+    
+    <p style="height: 100px;"></p>
+    <script>
+        window.onload = function() {
+            
+            const iframe = document.getElementById("iframe");
+            const areaKM = document.getElementById("km");
+            const areaHA = document.getElementById("ha");
+            
+            if (!localStorage.getItem("theme")) {
+                localStorage.setItem("theme", "white")
+            }
+            var theme = localStorage.getItem("theme");
+
+            function changeTheme() {
+                if (theme == "dark") {
+                    document.documentElement.style.setProperty('--cabecalho', '#161616');
+                    document.documentElement.style.setProperty('--principal', '#222222');
+                    document.documentElement.style.setProperty('--secundario', '#363636');
+                    document.documentElement.style.setProperty('--texto', '#ffffff');
+                }
+                if (theme == "white") {
+                    document.documentElement.style.setProperty('--cabecalho', '#cecece');
+                    document.documentElement.style.setProperty('--principal', '#888888');
+                    document.documentElement.style.setProperty('--secundario', '#bbbbbb');
+                    document.documentElement.style.setProperty('--texto', '#000000');
+                }
+            }
+            changeTheme();
+            
+            function checkIframe() {
+
+                if (iframe && iframe.contentWindow.area) {
+                    var area = iframe.contentWindow.area;
+                    areaHA.innerText = (area / 10000).toFixed(2) + " Hectares(ha)";
+                    areaKM.innerText = (area / 1000000).toFixed(2) + " Quilômetros quadrados (km²)";
+                }
+            }
+
+            setInterval(checkIframe, 100);
+        }
+    </script>
+</body>
+
+</html>
