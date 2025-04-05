@@ -47,53 +47,39 @@
             center: ol.proj.fromLonLat([-54.05, -24.55]),
             zoom: 14,
             rotation: 0
-        }),
-        interactions: []
+        })
     });
 
-    // Fonte para armazenar polígonos desenhados
-    var source = new ol.source.Vector();
+    var currentPolygon = null;
+
     var vectorLayer = new ol.layer.Vector({
-        source: source
+        source: new ol.source.Vector()
     });
     map.addLayer(vectorLayer);
 
-    // Interação de desenho de polígonos
     var draw = new ol.interaction.Draw({
-        source: source,
+        source: new ol.source.Vector(),
         type: 'Polygon'
     });
     map.addInteraction(draw);
-    map.rotation = 0;
-    // Adiciona o polígono desenhado ao layer e calcula a área
-    var area = 0;
-    draw.on('drawend', function (event) {
-        var feature = event.feature; // O polígono desenhado
-        source.clear();
-        source.addFeature(feature); // Adiciona o polígono à camada
 
-        // Calcula a área do polígono
-        var geom = feature.getGeometry();
-        
-        // Converte as coordenadas do polígono para o formato do Turf.js
+    draw.on('drawend', function (event) {
+        if (currentPolygon) {
+            vectorLayer.getSource().removeFeature(currentPolygon);
+        }
+        currentPolygon = event.feature;
+        vectorLayer.getSource().addFeature(currentPolygon);
+        var geom = currentPolygon.getGeometry();
         var turfPolygon = {
             type: 'Feature',
             geometry: {
                 type: 'Polygon',
-                coordinates: [geom.getCoordinates()[0].map(coord => ol.proj.toLonLat(coord))] // Converte para Lon/Lat
+                coordinates: [geom.getCoordinates()[0].map(coord => ol.proj.toLonLat(coord))]
             }
         };
 
-        area = turf.area(turfPolygon); // Área em metros quadrados
-        //console.log('Área do polígono: ' + area.toFixed(2) + ' m²'); // Imprime a área no console
-    });
-
-    // Completa o polígono atual ao pressionar a tecla de espaço
-    document.addEventListener('keydown', function (event) {
-        if (event.code === 'Space') {
-            draw.finishDrawing(); // Finaliza o polígono atual
-            event.preventDefault(); // Previne o comportamento padrão
-        }
+        area = turf.area(turfPolygon);
+        // console.log('Área: ' + area.toFixed(2) + ' m²');
     });
 </script>
 
