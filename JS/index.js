@@ -1,26 +1,12 @@
-window.onload = function() {
-            
-    const iframe = document.getElementById("window-selec");
-    if (!localStorage.getItem("theme")) {
-        localStorage.setItem("theme", "white")
-    }
-    var theme = localStorage.getItem("theme");
 
-    function changeTheme() {
-        if (theme == "dark") {
-            document.documentElement.style.setProperty('--cabecalho', '#161616');
-            document.documentElement.style.setProperty('--principal', '#222222');
-            document.documentElement.style.setProperty('--secundario', '#363636');
-            document.documentElement.style.setProperty('--texto', '#ffffff');
-        }
-        if (theme == "white") {
-            document.documentElement.style.setProperty('--cabecalho', '#cecece');
-            document.documentElement.style.setProperty('--principal', '#888888');
-            document.documentElement.style.setProperty('--secundario', '#bbbbbb');
-            document.documentElement.style.setProperty('--texto', '#000000');
-        }
-    }
-    changeTheme();
+var menu = false;
+const overlay = document.getElementById("overlay");
+const menu_icon = document.getElementById("menu");
+
+window.onload = function() {
+    
+    const iframe = document.getElementById("window-selec");
+    setTheme();
 
     function setPage() {
         if (!localStorage.getItem("page")) {
@@ -30,23 +16,54 @@ window.onload = function() {
         iframe.src = window;
     }
     setPage();
+}
 
-    const select_page_map = document.getElementById("select-mapa");
-    const select_page_about = document.getElementById("select-sobre");
-    const select_theme = document.getElementById("select-tema");
+function openMenu() {
+    if (!menu) {
+        overlay.style.opacity = '1';
+        menu_icon.src = 'Images/menu_close.png';
+        menu = true;
+    } else {
+        overlay.style.opacity = '0';
+        menu_icon.src = 'Images/menu.png';
+        menu = false;
+    }
+}
 
-    select_page_map.onclick = function() {
-        localStorage.setItem("page", "Pages/map.html");
+function setTheme() {
+    if (!localStorage.getItem("theme")) {
+        localStorage.setItem("theme", "white")
+    }
+    var theme = localStorage.getItem("theme");
+    if (theme == "dark") {
+        document.documentElement.style.setProperty('--cabecalho', '#161616');
+        document.documentElement.style.setProperty('--principal', '#222222');
+        document.documentElement.style.setProperty('--secundario', '#363636');
+        document.documentElement.style.setProperty('--texto', '#ffffff');
+    }
+    if (theme == "white") {
+        document.documentElement.style.setProperty('--cabecalho', '#cecece');
+        document.documentElement.style.setProperty('--principal', '#888888');
+        document.documentElement.style.setProperty('--secundario', '#bbbbbb');
+        document.documentElement.style.setProperty('--texto', '#000000');
+    }
+}
+function changeTheme() {
+    if (menu) {
+        localStorage.setItem("theme", (localStorage.getItem("theme") === "dark") ? "white" : "dark");
         location.reload();
     }
-    
-    select_page_about.onclick = function() {
+}
+
+function aboutPage() {
+    if (menu) {
         localStorage.setItem("page", "Pages/sobre.html");
         location.reload();
     }
-
-    select_theme.onclick = function() {
-        localStorage.setItem('theme', theme === 'dark' ? 'white' : 'dark');
+}
+function mapPage() {
+    if (menu) {
+        localStorage.setItem("page", "Pages/map.html");
         location.reload();
     }
 }

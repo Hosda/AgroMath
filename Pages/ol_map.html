@@ -68,6 +68,7 @@
     var area = 0;
     draw.on('drawend', function (event) {
         var feature = event.feature; // O polígono desenhado
+        source.clear();
         source.addFeature(feature); // Adiciona o polígono à camada
 
         // Calcula a área do polígono

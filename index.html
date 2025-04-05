@@ -9,18 +9,22 @@
 <body>
     <div class="header">
 
+        <div class="menu">
+            <img id="menu" class="menu" src="Images/menu.png" onclick="openMenu()">
+        </div>
         <div class="logo">
             <img id="logo" class="logo" src="Images/AgroMath.png" alt="AgroMath_logo">
         </div>
-        <div class="overlay">
-            <div class="page-select" id="select-sobre">
+
+        <div class="overlay" id="overlay">
+            <div class="page-select" id="select-sobre" onclick="aboutPage()">
                 <h1>SOBRE</h1>
             </div>
-            <div class="page-select" id="select-mapa">
+            <div class="page-select" id="select-mapa" onclick="mapPage()">
                 <h1>MAPA</h1>
                 
             </div>
-            <div class="page-select" id="select-tema">
+            <div class="page-select" id="select-tema" onclick="changeTheme()">
                 <h1>TEMA</h1>
                 
             </div>

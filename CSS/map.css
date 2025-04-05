@@ -40,3 +40,25 @@ iframe {
     background-color: var(--secundario);
     border-radius: 20px;
 }
+
+.title {
+    font-size: 3.5vw;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .comentario {
+        padding: 10px;
+        width: 78.5vw;
+        text-align: justify;
+        font-size: 5vw;
+        border: none;
+        background-color: var(--secundario);
+        border-radius: 20px;
+    }
+    
+    .title {
+        font-size: 7vw;
+        text-align: center;
+    }
+}
