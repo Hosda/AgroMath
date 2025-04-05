@@ -75,23 +75,11 @@ iframe {
 
 @media (max-width: 768px) {
     .page-select {
-        width: 40%;
-        justify-content: center;
-        text-align: center;
-        color: rgba(30, 90, 0);
         height: 80%;
         font-size: 8px;
-        border-radius: 10px;
-        background-color: var(--cabecalho);
     }
     .header {
-        width: 100%;
-        background-color: var(--cabecalho);
-        position: fixed;
-        display: flex;
         height: 90px;
-        border-top: 10px solid rgba(30, 90, 0);
-        border-bottom: 10px solid rgba(30, 90, 0);
     }
     .logo {
         width: 220px;

@@ -5,12 +5,13 @@
 @import url('color.css'); 
 
 body {
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
     height: 100vh;
-    padding-top: 100px;
+    padding-top: 5vh;
+    padding-bottom: 50vh;
     overflow-x: hidden;
-    padding-left: 10%;
     margin: 0;
     font-family: 'CooperLakeGothic', sans-serif;
     color: var(--texto);
@@ -62,29 +63,20 @@ iframe {
 
 
 @media (max-width: 768px) {
+    body {
+        padding-bottom: 20vh;
+    }
     .comentario {
-        padding: 10px;
-        width: 78.5vw;
-        text-align: justify;
-        font-size: 5vw;
-        border: none;
-        background-color: var(--secundario);
-        border-radius: 20px;
+        font-size: 2.5vw;
     }
     .title {
-        font-size: 7vw;
-        text-align: center;
+        font-size: 5vw;
     }
     .button {
         padding: 4vw;
         width: 50vw;
-        color: #ffff;
         transform: translate(12vw, 0%);
-        justify-content: center;
         font-size: 5vw;
-        border: none;
-        background-color: rgb(30, 90, 0);
         border-radius: 10px;
-        text-align: center;
     }
 }
