@@ -64,7 +64,8 @@ iframe {
 
 @media (max-width: 768px) {
     body {
-        padding-bottom: 20vh;
+        padding-top: 5Vh;
+        padding-bottom: 0vh;
     }
     .comentario {
         font-size: 2.5vw;
