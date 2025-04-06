@@ -67,3 +67,9 @@ function mapPage() {
         location.reload();
     }
 }
+function coustPage() {
+    if (menu) {
+        localStorage.setItem("page", "Pages/custos.html");
+        location.reload();
+    }
+}

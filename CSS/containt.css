@@ -5,11 +5,10 @@
 @import url('color.css'); 
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;   
     height: 100vh;
-    padding-top: 10vh;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20vh;
     overflow-x: hidden;
     margin: 0;
     font-family: 'CooperLakeGothic', sans-serif;
@@ -20,6 +19,7 @@ body {
 .comentario {
     padding: 10px;
     width: 78.5vw;
+    display: inline-block;
     font-size: 2.5vw;
     text-align: justify;
     border: none;
@@ -34,7 +34,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        padding-top: 5Vh;
+        padding-top: 20vh;
         padding-bottom: 0vh;
     }
     .comentario {

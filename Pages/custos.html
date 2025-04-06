@@ -13,25 +13,10 @@
         <h1 class="title" >Como usar o AgroMath?</h1>
         <p style="padding-left: 2%;">-Usar o AgroMath é simples e intuitivo, basta selecionar os limites do seu terreno clicando com o mouse em cada extremidade. Ao concluir, pressione a tecla Espaço, e o AgroMath calculará automaticamente a área da sua propriedade.</p>
     </div>
-    <p></p>
-    <div id="iframe-container">
-        <iframe id="iframe" src="ol_map.html"></iframe>
-    </div>
-    <p></p>
-    <div class="comentario">
-        <h1 class="title" >Sua área:</h1>
-        <p id="m" style="padding-left: 2%;">Selecione seu terreno no mapa primeiro</p>
-        <p id="km" style="padding-left: 2%;"></p>
-        <p id="ha" style="padding-left: 2%;"></p>
-    </div>
-    
     <script>
         window.onload = function() {
             
             const iframe = document.getElementById("iframe");
-            const areaM = document.getElementById("m");
-            const areaKM = document.getElementById("km");
-            const areaHA = document.getElementById("ha");
             
             if (!localStorage.getItem("theme")) {
                 localStorage.setItem("theme", "white")
@@ -53,18 +38,6 @@
                 }
             }
             changeTheme();
-            
-            function checkIframe() {
-
-                if (iframe && iframe.contentWindow.area) {
-                    var area = iframe.contentWindow.area;
-                    areaHA.innerText = (area / 10000).toFixed(2) + " Hectares(ha)";
-                    areaKM.innerText = (area / 1000000).toFixed(2) + " Quilômetros quadrados (km²)";
-                    areaM.innerText = (area).toFixed(0) + " Metros quadrados (m²)";
-                }
-            }
-
-            setInterval(checkIframe, 100);
         }
     </script>
 </body>
