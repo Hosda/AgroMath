@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'CooperLakeGothic';
+    src: url('/Fontes/Fonte.ttf') format('truetype');
+}
+@import url('color.css'); 
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    height: 100vh;
+    padding-top: 10vh;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'CooperLakeGothic', sans-serif;
+    color: var(--texto);
+    background-color: var(--principal);
+}
+
+.comentario {
+    padding: 10px;
+    width: 78.5vw;
+    font-size: 2.5vw;
+    text-align: justify;
+    border: none;
+    background-color: var(--secundario);
+    border-radius: 20px;
+}
+
+.title {
+    font-size: 3.5vw;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 5Vh;
+        padding-bottom: 0vh;
+    }
+    .comentario {
+        font-size: 2.5vw;
+    }
+    .title {
+        font-size: 5vw;
+    }
+}

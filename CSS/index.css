@@ -24,6 +24,8 @@ body {
     position: fixed;
     height: 15%;
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
     border-top: 10px solid rgba(30, 90, 0);
     border-bottom: 10px solid rgba(30, 90, 0);
 }
@@ -52,8 +54,9 @@ body {
 
 .logo {
     width: 50vh;
-    transform: translate(17vw, 0%);
+    transform: translate(-5%, 3%);
     height: 18vh;
+    margin: 0 auto;
     border: none;
 }
 .page {
@@ -70,7 +73,7 @@ iframe {
 .menu {
     width: 9vh;
     height: 9vh;
-    transform: translate(1vw , 2vh);
+    transform: translate(1vw , 0%);
 }
 
 @media (max-width: 768px) {
@@ -84,15 +87,13 @@ iframe {
     .logo {
         width: 220px;
         height: 80px;
-        left: -25px;
-        top: 5px;
-        position: absolute;
+        left: -28px;
+        top: 8px;
         border: none;
     }
     .menu {
         width: 40px;
         height: 40px;
-        transform: translate(1vw, 15px);
-        position: absolute;
+        transform: translate(1vw, 0px);
     }
 }
