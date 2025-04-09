@@ -86,6 +86,9 @@ iframe {
         width: 100%;
         font-size: 2vh;
     }
+    .page-select-text {
+        padding-top: 3%;
+    }
     .header {
         height: 90px;
     }
