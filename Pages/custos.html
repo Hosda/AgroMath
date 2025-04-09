@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal</title>
+    <title>Custos</title>
     <link rel="stylesheet" href="/CSS/containt.css">
     <link rel="stylesheet" href="/CSS/custos.css">
 </head>
@@ -66,12 +66,15 @@
                     
                     if (valor == "milho") {
                         saca_val.value = 85.25;
+                        hectare_vel = 90;
                     }
                     if (valor == "soja") {
                         saca_val.value = (120).toFixed(2);
+                        hectare_vel = 60;
                     }
                     if (valor == "cana") {
                         saca_val.value = (8.3).toFixed(2);
+                        hectare_vel = 1800;
                     }
                 });
             }
@@ -85,8 +88,19 @@
             let area = localStorage.getItem("area");
             let bruto = 0;
             const saca_val = document.getElementById("saca").value;
+            let hectare_val = 1;
 
-            bruto = area * 90 * saca_val;
+            if (options == "milho") {
+                hectare_val = 90;
+            }
+            if (options == "soja") {
+                hectare_val = 60;
+            }
+            if (options == "cana") {
+                hectare_val = 1800;
+            }
+
+            bruto = area * hectare_val * saca_val;
 
             gasto.innerText = "-Renda bruta: R$" + bruto.toFixed(2);
         }
