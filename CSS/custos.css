@@ -12,3 +12,11 @@
     background-color: var(--principal);
     border-radius: 20px;
 }
+
+@media (max-width: 768px) {
+    .options {
+        width: 50vw;
+        font-size: 5vw;
+        border-radius: 10px;
+    }
+}

@@ -22,13 +22,22 @@
             <option value="soja">SOJA</option>
             <option value="cana">CANA-DE-AÇUCAR</option>
         </select>
-        <div id="button" class="button" onclick="buttonOnClick()"> Calcular recita! </div>
-        <h1 class="title" id="t1" ></h1>
+
+        <p id="t1" ></p>
         <input type="number" class="options" id="saca" name="numero" value="85.25">
     </div>
     <p>
     <div class="comentario" style="text-align: center;">
+        <h1 class="title" >Área de seu terreno em hectares(he):</h1>
+
+        <input type="number" class="options" id="area" value="10" name="numero">
+        <div id="button" class="button" style="width: 40vw;" onclick="buttonMap()"> Não sei minha área! </div>
+    </div>
+    <p>
+    <div class="comentario" style="text-align: center;">
         <h1 class="title" >Receita:</h1>
+        <div id="button" class="button" onclick="buttonOnClick()"> Calcular recita! </div>
+        <p>
 
         <p id="gasto" >-Preencha as opções primeiro.</p>
     </div>
@@ -56,14 +65,17 @@
                 }
             }
             changeTheme();
+            document.getElementById("area").value = localStorage.getItem("area");
             function getOption() {
                 const options = document.getElementById("opcoes");
                 const saca_val = document.getElementById("saca");
+                const area = document.getElementById("area");
                 document.getElementById("t1").innerText = "Valor da saca de " + options.value + ":";
 
                 options.addEventListener("change", function() {
                     const valor = this.value;
-                    
+                    area.value = localStorage.getItem("area");
+
                     if (valor == "milho") {
                         saca_val.value = 85.25;
                         hectare_vel = 90;
@@ -81,11 +93,16 @@
             setInterval(getOption, 100);
         }
         
+        function buttonMap() {
+            localStorage.setItem("page", "Pages/map.html");
+            window.parent.location.reload();
+        }
 
         function buttonOnClick() {
             const gasto = document.getElementById("gasto");
             const options = document.getElementById("opcoes").value;
-            let area = localStorage.getItem("area");
+            let area = document.getElementById("area").value;
+
             let bruto = 0;
             const saca_val = document.getElementById("saca").value;
             let hectare_val = 1;
