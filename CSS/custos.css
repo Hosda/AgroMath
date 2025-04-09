@@ -8,6 +8,7 @@
     margin: 10px auto;
     justify-content: center;
     display: inline-block;
+    font-family: 'CooperLakeGothic', sans-serif;
     border: none;
     background-color: var(--principal);
     border-radius: 20px;

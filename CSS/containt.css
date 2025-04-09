@@ -11,7 +11,6 @@ body {
     padding-top: 20vh;
     overflow-x: hidden;
     margin: 0;
-    font-family: 'CooperLakeGothic', sans-serif;
     color: var(--texto);
     background-color: var(--principal);
 }
@@ -22,6 +21,7 @@ body {
     font-size: 2.5vw;
     color: #ffff;
     text-align: center;
+    font-family: 'CooperLakeGothic', sans-serif;
     margin: 10px auto;
     justify-content: center;
     border: none;
@@ -36,6 +36,7 @@ body {
     padding-right: 10px;
     width: 78.5vw;
     display: inline-block;
+    font-family: 'Roboto', Arial, sans-serif;
     font-size: 2.5vw;
     text-align: justify;
     border: none;
@@ -45,16 +46,17 @@ body {
 
 .title {
     font-size: 3.5vw;
+    font-family: 'CooperLakeGothic', sans-serif;
     text-align: center;
 }
 
 @media (max-width: 768px) {
     body {
         padding-top: 20vh;
-        padding-bottom: 0vh;
+        padding-bottom: 70vh;
     }
     .comentario {
-        font-size: 2.5vw;
+        font-size: 4.5vw;
     }
     .title {
         font-size: 5vw;
