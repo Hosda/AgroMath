@@ -16,8 +16,24 @@ body {
     background-color: var(--principal);
 }
 
+.button {
+    padding: 2vw;
+    width: 30vw;
+    font-size: 2.5vw;
+    color: #ffff;
+    text-align: center;
+    margin: 10px auto;
+    justify-content: center;
+    border: none;
+    background-color: rgb(30, 90, 0);
+    border-radius: 20px;
+}
+.button:hover {
+    background-color: rgb(20, 60, 0);
+}
+
 .comentario {
-    padding: 10px;
+    padding-right: 10px;
     width: 78.5vw;
     display: inline-block;
     font-size: 2.5vw;
@@ -42,5 +58,11 @@ body {
     }
     .title {
         font-size: 5vw;
+    }
+    
+    .button {
+        width: 50vw;
+        font-size: 5vw;
+        border-radius: 10px;
     }
 }

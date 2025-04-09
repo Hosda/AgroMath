@@ -20,11 +20,11 @@ window.onload = function() {
 
 function openMenu() {
     if (!menu) {
-        overlay.style.opacity = '1';
+        overlay.style.display = "flex";
         menu_icon.src = 'Images/menu_close.png';
         menu = true;
     } else {
-        overlay.style.opacity = '0';
+        overlay.style.display = "none";
         menu_icon.src = 'Images/menu.png';
         menu = false;
     }

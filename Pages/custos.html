@@ -5,21 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
     <link rel="stylesheet" href="/CSS/containt.css">
-    <link rel="stylesheet" href="/CSS/map.css">
+    <link rel="stylesheet" href="/CSS/custos.css">
 </head>
 <body>
-    
-    <div class="comentario">
-        <h1 class="title" >Como usar o AgroMath?</h1>
-        <p style="padding-left: 2%;">-Usar o AgroMath é simples e intuitivo, basta selecionar os limites do seu terreno clicando com o mouse em cada extremidade. Ao concluir, pressione a tecla Espaço, e o AgroMath calculará automaticamente a área da sua propriedade.</p>
+    <div class="comentario" style="text-align: center;">
+        <h1 class="title" >Como funcionam os preços?:</h1>
+
+        <p style="padding-left: 2%;">-O AgroMath possui uma página de custos, onde estima a receita e as despesas relacionadas ao seu plantio.</p>
+    </div>
+    <p>
+    <div class="comentario" style="text-align: center;">
+        <h1 class="title" >Selecione o seu plantio:</h1>
+
+        <select id="opcoes" name="opcoes" class="options">
+            <option value="milho">MILHO</option>
+            <option value="soja">SOJA</option>
+            <option value="cana">CANA-DE-AÇUCAR</option>
+        </select>
+        <div id="button" class="button" onclick="buttonOnClick()"> Calcular recita! </div>
+        <h1 class="title" id="t1" ></h1>
+        <input type="number" class="options" id="saca" name="numero" value="85.25">
+    </div>
+    <p>
+    <div class="comentario" style="text-align: center;">
+        <h1 class="title" >Receita:</h1>
+
+        <p id="gasto" >-Preencha as opções primeiro.</p>
     </div>
     <script>
         window.onload = function() {
-            
             const iframe = document.getElementById("iframe");
             
             if (!localStorage.getItem("theme")) {
-                localStorage.setItem("theme", "white")
+                localStorage.setItem("theme", "white");
             }
             var theme = localStorage.getItem("theme");
 
@@ -38,6 +56,39 @@
                 }
             }
             changeTheme();
+            function getOption() {
+                const options = document.getElementById("opcoes");
+                const saca_val = document.getElementById("saca");
+                document.getElementById("t1").innerText = "Valor da saca de " + options.value + ":";
+
+                options.addEventListener("change", function() {
+                    const valor = this.value;
+                    
+                    if (valor == "milho") {
+                        saca_val.value = 85.25;
+                    }
+                    if (valor == "soja") {
+                        saca_val.value = (120).toFixed(2);
+                    }
+                    if (valor == "cana") {
+                        saca_val.value = (8.3).toFixed(2);
+                    }
+                });
+            }
+            setInterval(getOption, 100);
+        }
+        
+
+        function buttonOnClick() {
+            const gasto = document.getElementById("gasto");
+            const options = document.getElementById("opcoes").value;
+            let area = localStorage.getItem("area");
+            let bruto = 0;
+            const saca_val = document.getElementById("saca").value;
+
+            bruto = area * 90 * saca_val;
+
+            gasto.innerText = "-Renda bruta: R$" + bruto.toFixed(2);
         }
     </script>
 </body>

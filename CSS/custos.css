@@ -1,0 +1,14 @@
+.options {
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    width: 30vw;
+    font-size: 2.5vw;
+    color: var(--texto);
+    text-align: center;
+    margin: 10px auto;
+    justify-content: center;
+    display: inline-block;
+    border: none;
+    background-color: var(--principal);
+    border-radius: 20px;
+}

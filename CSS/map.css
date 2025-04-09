@@ -13,15 +13,3 @@ iframe {
     height: 100%;
     border: none;
 }
-body {
-    padding-bottom: 10vh;
-}
-@media (max-width: 768px) {
-    .title {
-        font-size: 5vw;
-    }
-        
-    body {
-        padding-bottom: 0vh;
-    }   
-}

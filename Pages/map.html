@@ -18,11 +18,13 @@
         <iframe id="iframe" src="ol_map.html"></iframe>
     </div>
     <p></p>
-    <div class="comentario">
+    <div class="comentario" style="text-align: center;">
         <h1 class="title" >Sua área:</h1>
         <p id="m" style="padding-left: 2%;">Selecione seu terreno no mapa primeiro</p>
         <p id="km" style="padding-left: 2%;"></p>
         <p id="ha" style="padding-left: 2%;"></p>
+        
+        <div id="button" style="display: none;" class="button" onclick="buttonOnClick()"> Calcular receita! </div>
     </div>
     
     <script>
@@ -32,9 +34,10 @@
             const areaM = document.getElementById("m");
             const areaKM = document.getElementById("km");
             const areaHA = document.getElementById("ha");
+            const button = document.getElementById("button");
             
             if (!localStorage.getItem("theme")) {
-                localStorage.setItem("theme", "white")
+                localStorage.setItem("theme", "white");
             }
             var theme = localStorage.getItem("theme");
 
@@ -61,10 +64,16 @@
                     areaHA.innerText = (area / 10000).toFixed(2) + " Hectares(ha)";
                     areaKM.innerText = (area / 1000000).toFixed(2) + " Quilômetros quadrados (km²)";
                     areaM.innerText = (area).toFixed(0) + " Metros quadrados (m²)";
+                    localStorage.setItem("area", (area / 10000).toFixed(2));
+                    button.style.display = "block";
                 }
             }
 
             setInterval(checkIframe, 100);
+        }
+        function buttonOnClick() {
+            localStorage.setItem("page", "Pages/custos.html");
+            window.parent.location.reload();
         }
     </script>
 </body>
