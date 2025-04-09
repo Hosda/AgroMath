@@ -53,7 +53,6 @@ body {
 @media (max-width: 768px) {
     body {
         padding-top: 20vh;
-        padding-bottom: 70vh;
     }
     .comentario {
         font-size: 4.5vw;
