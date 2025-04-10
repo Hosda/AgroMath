@@ -24,7 +24,7 @@
         <h1 class="title" >Como medir com o AgroMath?</h1>
         <p style="padding-left: 2%;">-Usar o AgroMath é simples e intuitivo, basta selecionar os limites do seu terreno no mapa clicando com o mouse em cada extremidade. Ao concluir, pressione a tecla Espaço, e o AgroMath calculará automaticamente a área da sua propriedade.</p>
         <h1 class="title" >Medir sua área!</h1>
-        <div id="button" class="button" onclick="buttonMap()"> Ir para o mapa! </div>
+        <div id="button" class="button" onclick="changePage('map')"> Ir para o mapa! </div>
     </div>
     <p>
     <div class="comentario">
@@ -36,46 +36,17 @@
         <h1 class="title" >Como calcular reeceita com o AgroMath?</h1>
         <p style="padding-left: 2%;">-O AgroMath possui uma página de custos, onde estima a receita e as despesas relacionadas ao seu plantio.</p>
         <h1 class="title" >Medir sua área!</h1>
-        <div id="button" class="button" onclick="buttonCoust()"> Calcular Receita! </div>
+        <div id="button" class="button" onclick="changePage('custos')"> Calcular Receita! </div>
     </div>
     <p>
     <div class="comentario">
         <h1 class="title" >Como o AgroMath consegue calcular a receita?</h1>
         <p style="padding-left: 2%;">-O Agromath calcula a receita da plantação com base na cultura escolhida (cana, milho ou soja), considerando a produção média em sacas por hectare e o valor de cada saca. Primeiro, ele multiplica a quantidade de sacas por hectare pela área total do terreno. Em seguida, multiplica esse resultado pelo preço da saca. Com isso, o sistema mostra uma estimativa do valor que pode ser obtido com a produção naquela área.</p>
     </div>
-    <p style="height: 2vh"></p>
+    <p style="height: 4vh"></p>
 
+    <script src="containt.js"></script>
     <script>
-        window.onload = function() {
-            if (!localStorage.getItem("theme")) {
-                localStorage.setItem("theme", "white");
-            }
-            var theme = localStorage.getItem("theme");
-
-            function changeTheme() {
-                if (theme == "dark") {
-                    document.documentElement.style.setProperty('--cabecalho', '#161616');
-                    document.documentElement.style.setProperty('--principal', '#222222');
-                    document.documentElement.style.setProperty('--secundario', '#363636');
-                    document.documentElement.style.setProperty('--texto', '#ffffff');
-                }
-                if (theme == "white") {
-                    document.documentElement.style.setProperty('--cabecalho', '#cecece');
-                    document.documentElement.style.setProperty('--principal', '#888888');
-                    document.documentElement.style.setProperty('--secundario', '#bbbbbb');
-                    document.documentElement.style.setProperty('--texto', '#000000');
-                }
-            }
-            changeTheme();
-        }
-        function buttonMap() {
-                localStorage.setItem("page", "Pages/map.html");
-                window.parent.location.reload();
-        }
-        function buttonCoust() {
-                localStorage.setItem("page", "Pages/custos.html");
-                window.parent.location.reload();
-        }
     </script>
 </body>
 </html>

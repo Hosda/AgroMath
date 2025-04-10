@@ -8,29 +8,25 @@
     <link rel="stylesheet" href="/CSS/index.css">
 </head>
 <body>
-    <div class="header">
-
-        <div class="menu">
-            <img id="menu" class="menu" src="Images/menu.png" onclick="openMenu()">
-        </div>
+    <div id="header" class="header">
         <div class="logo">
             <img id="logo" class="logo" src="Images/AgroMath.png" alt="AgroMath_logo">
         </div>
+    </div>
 
-        <div class="overlay" id="overlay">
-            <div class="page-select" id="select-sobre" onclick="aboutPage()">
-                <h1 class="page-select-text" >Sobre</h1>
-            </div>
-            <div class="page-select" id="select-mapa" onclick="mapPage()">
-                <h1 class="page-select-text" >Mapa</h1>
-                
-            </div>
-            <div class="page-select" id="select-loja" onclick="coustPage()">
-                <h1 class="page-select-text" >Custo</h1>
-            </div>
-            <div class="page-select" id="select-tema" onclick="changeTheme()">
-                <h1 class="page-select-text" >Tema</h1>
-            </div>
+    
+    <div class="overlay" id="overlay">
+        <div class="page-select" id="select-sobre" onclick="changePage('sobre')">
+            <h1 class="page-select-text" >Sobre</h1>
+        </div>
+        <div class="page-select" id="select-mapa" onclick="changePage('map')">
+            <h1 class="page-select-text" >Mapa</h1>
+        </div>
+        <div class="page-select" id="select-loja" onclick="changePage('custos')">
+            <h1 class="page-select-text" >Custo</h1>
+        </div>
+        <div class="page-select" id="select-tema" onclick="changeTheme()">
+            <h1 class="page-select-text" >Tema</h1>
         </div>
     </div>
 
@@ -39,6 +35,8 @@
             <iframe id="window-selec" src="Pages/sobre.html"></iframe>
         </div>
     </div>
+    
+    <script src="Pages/containt.js"></script>
     <script src="JS/index.js"></script>
 </body>
 </html>

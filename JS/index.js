@@ -1,5 +1,3 @@
-
-var menu = false;
 const overlay = document.getElementById("overlay");
 const menu_icon = document.getElementById("menu");
 
@@ -16,18 +14,6 @@ window.onload = function() {
         iframe.src = window;
     }
     setPage();
-}
-
-function openMenu() {
-    if (!menu) {
-        overlay.classList.add("display_true");
-        menu_icon.src = 'Images/menu_close.png';
-        menu = true;
-    } else {
-        overlay.classList.remove("display_true");
-        menu_icon.src = 'Images/menu.png';
-        menu = false;
-    }
 }
 
 function setTheme() {
@@ -49,27 +35,31 @@ function setTheme() {
     }
 }
 function changeTheme() {
-    if (menu) {
-        localStorage.setItem("theme", (localStorage.getItem("theme") === "dark") ? "white" : "dark");
-        location.reload();
-    }
+    localStorage.setItem("theme", (localStorage.getItem("theme") === "dark") ? "white" : "dark");
+    location.reload();
 }
 
-function aboutPage() {
-    if (menu) {
-        localStorage.setItem("page", "Pages/sobre.html");
-        location.reload();
+
+//Scroll
+let ultimoScroll = 0;
+const header = document.getElementById("header");
+
+window.addEventListener("message", (event) => {
+  if (event.data && typeof event.data.scrollY === "number") {
+    const atualScroll = event.data.scrollY;
+
+    if (atualScroll > ultimoScroll) {
+        if (window.innerWidth > 768) {
+            header.style.top = "-20%";
+            overlay.style.top = "-15%";
+        }
+    } else {
+        if (window.innerWidth > 768) {
+            header.style.top = "0%";
+            overlay.style.top = "16%";
+        }
     }
-}
-function mapPage() {
-    if (menu) {
-        localStorage.setItem("page", "Pages/map.html");
-        location.reload();
-    }
-}
-function coustPage() {
-    if (menu) {
-        localStorage.setItem("page", "Pages/custos.html");
-        location.reload();
-    }
-}
+
+    ultimoScroll = atualScroll;
+  }
+});

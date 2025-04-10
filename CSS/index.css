@@ -17,30 +17,31 @@ body {
     height: 100vh;
     overflow: hidden;
 }
+
 .header {
     width: 100%;
     background-color: var(--cabecalho);
     position: fixed;
+    top: 0;
     height: 15%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     border-top: 10px solid rgba(30, 90, 0);
     border-bottom: 10px solid rgba(30, 90, 0);
-}
-.overlay {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    padding-top: 10px;
-    height: 50%;
-    gap: 5%;
-    display: none;
-    background-color: rgba(30, 90, 0);
+    transition: top 1s ease ;
 }
 
-.display_true {
+.overlay {
+    position: fixed;
+    top: 16%;
+    width: 100%;
+    padding-top: 10px;
+    height: 8%;
+    gap: 5%;
     display: flex;
+    background-color: rgba(30, 90, 0);
+    transition: top 1s ease ;
 }
 
 .page-select {
@@ -80,41 +81,41 @@ iframe {
 
 @media (max-width: 768px) {
     .page-select {
-        height: 4vh;
+        height: 8vh;
         background-color: rgba(30, 90, 0);
         color: var(--cabecalho);
-        width: 80%;
-        opacity: 1;
-        margin-bottom: 1vh;
         display: inline-block;
         font-size: 1vh;
     }
+    .page-select-text {
+        line-height: 10vh;
+    }
     .header {
-        height: 90px;
+        border-top: none;
+        height: 80px;
     }
     .logo {
         width: 220px;
         height: 80px;
-        left: -28px;
+        padding-left: 10px;
         top: 8px;
         border: none;
     }
     .overlay {
-        position: absolute;
-        justify-content: center;
+        border-top: 10px solid rgba(30, 90, 0);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin-top: auto;
+        color: white;
         text-align: center;
-        top: 100%;
-        height: 30vh;
-        width: 50%;
-        background-color: color-mix(in srgb, var(--secundario), transparent 30%);
-        padding-top: 20px;
+        padding: 10px 0;
+        background-color: var(--cabecalho);
     }
     .menu {
         width: 40px;
         height: 40px;
         transform: translate(1vw, 0px);
-    }
-    .display_true {
-        display: block;
     }
 }

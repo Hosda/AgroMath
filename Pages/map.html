@@ -19,9 +19,10 @@
         <p id="km" style="padding-left: 2%;"></p>
         <p id="ha" style="padding-left: 2%;"></p>
         
-        <div id="button" style="display: none;" class="button" onclick="buttonOnClick()"> Calcular receita! </div>
+        <div id="button" style="display: none;" class="button" onclick="changePage('custos')"> Calcular receita! </div>
     </div>
     
+    <script src="containt.js"></script>
     <script>
         window.onload = function() {
             
@@ -30,27 +31,6 @@
             const areaKM = document.getElementById("km");
             const areaHA = document.getElementById("ha");
             const button = document.getElementById("button");
-            
-            if (!localStorage.getItem("theme")) {
-                localStorage.setItem("theme", "white");
-            }
-            var theme = localStorage.getItem("theme");
-
-            function changeTheme() {
-                if (theme == "dark") {
-                    document.documentElement.style.setProperty('--cabecalho', '#161616');
-                    document.documentElement.style.setProperty('--principal', '#222222');
-                    document.documentElement.style.setProperty('--secundario', '#363636');
-                    document.documentElement.style.setProperty('--texto', '#ffffff');
-                }
-                if (theme == "white") {
-                    document.documentElement.style.setProperty('--cabecalho', '#cecece');
-                    document.documentElement.style.setProperty('--principal', '#888888');
-                    document.documentElement.style.setProperty('--secundario', '#bbbbbb');
-                    document.documentElement.style.setProperty('--texto', '#000000');
-                }
-            }
-            changeTheme();
             
             function checkIframe() {
 
@@ -65,10 +45,6 @@
             }
 
             setInterval(checkIframe, 100);
-        }
-        function buttonOnClick() {
-            localStorage.setItem("page", "Pages/custos.html");
-            window.parent.location.reload();
         }
     </script>
 </body>
