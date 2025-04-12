@@ -53,7 +53,12 @@ body {
     height: 80%;
     font-size: 1.5vh;
     border-radius: 10px;
+    display: flex;
     background-color: var(--cabecalho);
+}
+.selected_page {
+    background-color: var(--principal);
+    color: var(--texto);
 }
 
 .logo {
@@ -87,8 +92,12 @@ iframe {
         display: inline-block;
         font-size: 1vh;
     }
+    .selected_page {
+        background-color: var(--principal);
+        color: rgba(30, 90, 0);
+    }
     .page-select-text {
-        line-height: 10vh;
+        line-height: 1vh;
     }
     .header {
         border-top: none;

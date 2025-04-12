@@ -2,7 +2,7 @@ const iframe = document.getElementById("iframe");
 
 //Tema
 if (!localStorage.getItem("theme")) {
-    localStorage.setItem("theme", "white");
+    localStorage.setItem("theme", "light");
 }
 var theme = localStorage.getItem("theme");
 
@@ -13,7 +13,7 @@ function changeTheme() {
         document.documentElement.style.setProperty('--secundario', '#363636');
         document.documentElement.style.setProperty('--texto', '#ffffff');
     }
-    if (theme == "white") {
+    if (theme == "light") {
         document.documentElement.style.setProperty('--cabecalho', '#cecece');
         document.documentElement.style.setProperty('--principal', '#888888');
         document.documentElement.style.setProperty('--secundario', '#bbbbbb');

@@ -1,0 +1,32 @@
+.icon-page {
+    margin-left: -1vw;
+}
+
+.icon-color-green {
+    filter:
+        brightness(0) 
+        invert(1)
+        sepia(1)
+        hue-rotate(45deg)
+        saturate(2700%)
+        brightness(0.375); 
+}
+.icon-color-light {
+    filter:
+        brightness(0) 
+        invert(1)
+        brightness(0.8); 
+}
+.icon-color-dark {
+    filter:
+        brightness(0) 
+        invert(1)
+        brightness(0.1); 
+}
+
+@media (max-width: 768px) {
+    .icon-page {
+        height: 55%;
+        margin-left: -1vw;
+    }
+}

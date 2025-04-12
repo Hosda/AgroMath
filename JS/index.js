@@ -10,15 +10,51 @@ window.onload = function() {
         if (!localStorage.getItem("page")) {
             localStorage.setItem("page", "Pages/sobre.html")
         }
-        var window = localStorage.getItem("page");
-        iframe.src = window;
+        var window_page = localStorage.getItem("page");
+        iframe.src = window_page;
     }
     setPage();
+
+    function selectPageColor() {
+        const icons = document.querySelectorAll('.icon-page');
+        
+        if (window.innerWidth <= 768) {
+            icons.forEach(el => {
+                el.classList.remove('icon-color-green', 'icon-color-dark', 'icon-color-light');
+                el.classList.add(theme === "dark" ? 'icon-color-dark' : 'icon-color-light');
+            });
+        } else {
+            icons.forEach(el => {
+                el.classList.remove('icon-color-dark', 'icon-color-light');
+                el.classList.add('icon-color-green');
+            });
+        }
+    }
+    selectPageColor();
+    window.addEventListener('resize', selectPageColor);
+    
+    function pressSelectPage() {
+        let window_page = localStorage.getItem("page");
+        let pagina = window_page.replace("Pages/", "").replace(".html", "");
+        let select_page = document.getElementById("select-"+pagina);
+
+        select_page.classList.add("selected_page");
+        let el = document.getElementById("icon-"+pagina);
+        if (window.innerWidth <= 768) {
+            el.classList.remove('icon-color-green', 'icon-color-dark', 'icon-color-light');
+            el.classList.add('icon-color-green');
+        } else {
+            el.classList.remove('icon-color-green', 'icon-color-dark', 'icon-color-light');
+            el.classList.add(theme === "light" ? 'icon-color-dark' : 'icon-color-light');
+        }
+    }
+    window.addEventListener('resize', pressSelectPage);
+    pressSelectPage();
 }
 
 function setTheme() {
     if (!localStorage.getItem("theme")) {
-        localStorage.setItem("theme", "white")
+        localStorage.setItem("theme", "light")
     }
     var theme = localStorage.getItem("theme");
     if (theme == "dark") {
@@ -27,7 +63,7 @@ function setTheme() {
         document.documentElement.style.setProperty('--secundario', '#363636');
         document.documentElement.style.setProperty('--texto', '#ffffff');
     }
-    if (theme == "white") {
+    if (theme == "light") {
         document.documentElement.style.setProperty('--cabecalho', '#cecece');
         document.documentElement.style.setProperty('--principal', '#888888');
         document.documentElement.style.setProperty('--secundario', '#bbbbbb');
@@ -35,7 +71,7 @@ function setTheme() {
     }
 }
 function changeTheme() {
-    localStorage.setItem("theme", (localStorage.getItem("theme") === "dark") ? "white" : "dark");
+    localStorage.setItem("theme", (localStorage.getItem("theme") === "dark") ? "light" : "dark");
     location.reload();
 }
 

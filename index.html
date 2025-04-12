@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/Agro.png" type="image/png">
     <title>AgroMath</title>
+    <link rel="stylesheet" href="/CSS/selectPage.css">
     <link rel="stylesheet" href="/CSS/index.css">
 </head>
 <body>
@@ -17,12 +18,15 @@
     
     <div class="overlay" id="overlay">
         <div class="page-select" id="select-sobre" onclick="changePage('sobre')">
+            <img class="icon-page" id="icon-sobre" src="Images/icone-sobre.png">
             <h1 class="page-select-text" >Sobre</h1>
         </div>
-        <div class="page-select" id="select-mapa" onclick="changePage('map')">
+        <div class="page-select" id="select-map" onclick="changePage('map')">
+            <img class="icon-page" id="icon-map" src="Images/icone-mapa.png">
             <h1 class="page-select-text" >Mapa</h1>
         </div>
-        <div class="page-select" id="select-loja" onclick="changePage('custos')">
+        <div class="page-select" id="select-custos" onclick="changePage('custos')">
+            <img class="icon-page" id="icon-custos" src="Images/icone-custo.png">
             <h1 class="page-select-text" >Custo</h1>
         </div>
         <div class="page-select" id="select-tema" onclick="changeTheme()">
