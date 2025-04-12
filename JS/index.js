@@ -52,18 +52,23 @@ window.onload = function() {
     pressSelectPage();
 }
 
+const swith_theme = document.getElementById("switch-theme");
+console.log(swith_theme)
+
 function setTheme() {
     if (!localStorage.getItem("theme")) {
         localStorage.setItem("theme", "light")
     }
     var theme = localStorage.getItem("theme");
     if (theme == "dark") {
+        swith_theme.classList.add('switch-enable');
         document.documentElement.style.setProperty('--cabecalho', '#161616');
         document.documentElement.style.setProperty('--principal', '#222222');
         document.documentElement.style.setProperty('--secundario', '#363636');
         document.documentElement.style.setProperty('--texto', '#ffffff');
     }
     if (theme == "light") {
+        swith_theme.classList.add('switch-disable');
         document.documentElement.style.setProperty('--cabecalho', '#cecece');
         document.documentElement.style.setProperty('--principal', '#888888');
         document.documentElement.style.setProperty('--secundario', '#bbbbbb');

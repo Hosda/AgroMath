@@ -56,6 +56,10 @@ body {
     display: flex;
     background-color: var(--cabecalho);
 }
+.page-select:not(.no-hover):hover {
+    background-color: var(--principal);
+}
+
 .selected_page {
     background-color: var(--principal);
     color: var(--texto);

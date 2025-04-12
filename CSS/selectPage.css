@@ -24,9 +24,70 @@
         brightness(0.1); 
 }
 
+.switch {
+    margin-top: 1%;
+    position: relative;
+    width: 10vh;
+    height: 80%;
+    background: var(--cabecalho);
+    border: 2px solid rgb(30, 90, 0);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .switch .slider {
+    position: absolute;
+    width: 4vh;
+    height: 4vh;
+    background-color: rgb(30, 90, 0);
+    border-radius: 50%;
+    top: 10%;
+    left: 2.5vh;
+    transition: left 0.3s;
+  }
+
+  .switch-enable .slider {
+    left: 5vh;
+  }
+  
+  .switch-disable .slider {
+    left: 1vh;
+  }
+
 @media (max-width: 768px) {
     .icon-page {
         height: 55%;
         margin-left: -1vw;
     }
+    .switch {
+        margin-left: 10%;
+        position: relative;
+        width: 8vh;
+        height: 45%;
+        background: var(--cabecalho);
+        border: 2px solid rgb(30, 90, 0);
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+    
+      .switch .slider {
+        position: absolute;
+        width: 3vh;
+        height: 3vh;
+        background-color: rgb(30, 90, 0);
+        border-radius: 50%;
+        top: 10%;
+        left: 2.5vh;
+        transition: left 0.3s;
+      }
+    
+      .switch-enable .slider {
+        left: 4vh;
+      }
+      
+      .switch-disable .slider {
+        left: 1vh;
+      }
 }
