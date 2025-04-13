@@ -26,6 +26,7 @@
 
 .switch {
     margin-top: 1%;
+    user-select: none;
     position: relative;
     width: 10vh;
     height: 80%;
@@ -61,10 +62,12 @@
         margin-left: -1vw;
     }
     .switch {
-        margin-left: 10%;
         position: relative;
+        display: inline-block;
         width: 8vh;
+        user-select: none;
         height: 45%;
+        margin-top: -1%;
         background: var(--cabecalho);
         border: 2px solid rgb(30, 90, 0);
         border-radius: 30px;

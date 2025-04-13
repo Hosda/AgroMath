@@ -16,6 +16,7 @@ window.onload = function() {
     setPage();
 
     function selectPageColor() {
+        document.body.style.zoom = "100%";
         const icons = document.querySelectorAll('.icon-page');
         
         if (window.innerWidth <= 768) {
