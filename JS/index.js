@@ -2,7 +2,7 @@ const overlay = document.getElementById("overlay");
 const menu_icon = document.getElementById("menu");
 
 window.onload = function() {
-    
+    document.body.style.zoom = "100%";
     const iframe = document.getElementById("window-selec");
     setTheme();
 
