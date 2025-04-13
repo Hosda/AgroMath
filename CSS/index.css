@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    user-select: none;
     transform: scale(1);
     touch-action: manipulation;
     overscroll-behavior: none;

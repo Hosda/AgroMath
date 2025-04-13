@@ -53,7 +53,6 @@ window.onload = function() {
 }
 
 const swith_theme = document.getElementById("switch-theme");
-console.log(swith_theme)
 
 function setTheme() {
     if (!localStorage.getItem("theme")) {

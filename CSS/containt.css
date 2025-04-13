@@ -38,6 +38,7 @@ body {
 .comentario {
     padding-right: 10px;
     width: 78.5vw;
+    user-select: none;
     display: inline-block;
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 2.5vw;
