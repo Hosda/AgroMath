@@ -6,6 +6,8 @@
 
 body {
     height: 100vh;
+    touch-action: manipulation;
+    overscroll-behavior: none;
     justify-content: center;
     text-align: center;
     padding-top: 20vh;

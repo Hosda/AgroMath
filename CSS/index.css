@@ -9,6 +9,8 @@ body {
     align-items: center;
     height: 100vh;
     transform: scale(1);
+    touch-action: manipulation;
+    overscroll-behavior: none;
     transform-origin: 0 0;
     overflow: hidden;
     margin: 0;
