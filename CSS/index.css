@@ -125,7 +125,8 @@ iframe {
     .overlay {
         border-top: 10px solid rgba(30, 90, 0);
         position: fixed;
-        bottom: 0;
+        bottom: 0%;
+        height: 12%;
         left: 0;
         width: 100%;
         margin-top: auto;
