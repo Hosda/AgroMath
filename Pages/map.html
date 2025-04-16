@@ -15,9 +15,9 @@
     <p></p>
     <div class="comentario" style="text-align: center;">
         <h1 class="title" >Sua área:</h1>
-        <p id="m" style="padding-left: 2%;">Selecione seu terreno no mapa primeiro</p>
-        <p id="km" style="padding-left: 2%;"></p>
-        <p id="ha" style="padding-left: 2%;"></p>
+        <p id="m" class="comentario-menor" style="padding-left: 2%;">Selecione seu terreno no mapa primeiro</p>
+        <p id="km" class="comentario-menor" style="padding-left: 2%;"></p>
+        <p id="ha" class="comentario-menor" style="padding-left: 2%;"></p>
         
         <div id="button" style="display: none;" class="button" onclick="changePage('custos')"> Calcular receita! </div>
     </div>
@@ -31,13 +31,16 @@
             const areaKM = document.getElementById("km");
             const areaHA = document.getElementById("ha");
             const button = document.getElementById("button");
+            areaM.style.display = "inline-block";
             
             function checkIframe() {
 
                 if (iframe && iframe.contentWindow.area) {
                     var area = iframe.contentWindow.area;
                     areaHA.innerText = (area / 10000).toFixed(2) + " Hectares(ha)";
+                    areaHA.style.display = "inline-block";
                     areaKM.innerText = (area / 1000000).toFixed(2) + " Quilômetros quadrados (km²)";
+                    areaKM.style.display = "inline-block";
                     areaM.innerText = (area).toFixed(0) + " Metros quadrados (m²)";
                     localStorage.setItem("area", (area / 10000).toFixed(2));
                     button.style.display = "block";
