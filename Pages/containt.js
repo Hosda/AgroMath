@@ -14,9 +14,9 @@ function changeTheme() {
         document.documentElement.style.setProperty('--texto', '#ffffff');
     }
     if (theme == "light") {
-        document.documentElement.style.setProperty('--cabecalho', '#cecece');
-        document.documentElement.style.setProperty('--principal', '#888888');
-        document.documentElement.style.setProperty('--secundario', '#bbbbbb');
+        document.documentElement.style.setProperty('--cabecalho', '#ffffff');
+        document.documentElement.style.setProperty('--principal', '#c9c9c9');
+        document.documentElement.style.setProperty('--secundario', '#e9e9e9');
         document.documentElement.style.setProperty('--texto', '#000000');
     }
 }
