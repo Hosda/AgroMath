@@ -36,6 +36,7 @@ window.onload = function() {
     
     function pressSelectPage() {
         let window_page = localStorage.getItem("page");
+        console.log(window_page)
         let pagina = window_page.replace("Pages/", "").replace(".html", "");
         let select_page = document.getElementById("select-"+pagina);
 
