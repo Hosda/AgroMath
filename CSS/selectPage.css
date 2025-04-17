@@ -15,7 +15,7 @@
     filter:
         brightness(0) 
         invert(1)
-        brightness(0.8); 
+        brightness(0.9); 
 }
 .icon-color-dark {
     filter:
