@@ -17,6 +17,12 @@ body {
     background-color: var(--principal);
 }
 
+iframe {
+    width: 100%;
+    height: 30vh;
+    border: none;
+}
+
 .button {
     user-select: none;
     padding: 2vw;

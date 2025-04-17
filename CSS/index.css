@@ -15,7 +15,10 @@ body {
     transform-origin: 0 0;
     overflow: hidden;
     margin: 0;
-    background-color: var(--secundario);
+    background-image: url('../Images/soja.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #iframe-container {
     width: 100vw;

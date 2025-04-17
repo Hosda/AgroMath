@@ -42,7 +42,9 @@
         <p id="gasto" class="comentario-menor" style="display: inline-block;">-Preencha as opções primeiro.</p>
     </div>
     <script src="containt.js"></script>
+    <iframe src="rodape.html"></iframe>
     <script>
+        const bodyPrincipal = window.parent.document.body;
         window.onload = function() {
             changeTheme();
             document.getElementById("area").value = localStorage.getItem("area");
@@ -56,6 +58,7 @@
                     const valor = this.value;
                     area.value = localStorage.getItem("area");
 
+                    bodyPrincipal.style.backgroundImage = "url('../Images/"+valor+".png')";
                     if (valor == "milho") {
                         saca_val.value = 85.25;
                         hectare_vel = 90;
