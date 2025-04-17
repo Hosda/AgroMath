@@ -4,6 +4,9 @@ O que é o AgroMath?
 Como eu fiz o AgroMath?
 -Usei várias páginas HTML dentro de um iframe na página index.html, onde o conteúdo do iframe muda conforme a página selecionada. Utilizei CSS para criar uma interface gráfica aceitável e JavaScript para a programação. O mapa satélite foi implementado com a biblioteca OpenLayers, e utilizei o Turf.js para calcular a área dos polígonos selecionados.
 
+Como fiz as Imagens?
+-Criei TODAS as imagens com o aplicativo IbisPaint, a fonte que eu usei no título e no nome das páginas foi a CooperLakeGothic.
+
 Objetivos do AgroMath:
 -O AgroMath tem como objetivo auxiliar proprietários rurais a calcular a área de suas plantações por meio da ferramenta de mapas integrada à plataforma.
 -Além de calcular a área do seu terreno, você pode selecionar o tipo de cultivo desejado, e o AgroMath estimará o lucro potencial da sua plantação.
