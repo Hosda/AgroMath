@@ -1,5 +1,8 @@
 O que é o AgroMath?
--O AgroMath é uma ferramenta desenvolvida pelo aluno <b>Gabriel Henrique Machado Hosda</b>, para participar do Agrinho Programação 2025.
+-O AgroMath é uma ferramenta desenvolvida pelo aluno Gabriel Henrique Machado Hosda, para participar do Agrinho Programação 2025.
+
+Como eu fiz o AgroMath?
+-Usei varias pagínas HTML dentro de um iframe na pagína index.html, onde o iframe é a pagína selecionada, usei css para fazer uma parte grafíca aceitavel, e usei javascript na programação, o mapa satelite foi usado com a biblioteca openlayer, e turf para calcular a area dos poligonos selecionados.
 
 Objetivos do AgroMath:
 -O AgroMath tem como objetivo auxiliar proprietários rurais a calcular a área de suas plantações por meio da ferramenta de mapas integrada à plataforma.
