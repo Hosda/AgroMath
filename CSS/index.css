@@ -15,8 +15,7 @@ body {
     transform-origin: 0 0;
     overflow: hidden;
     margin: 0;
-    background-image: url('../Images/soja.png');
-    background-position: center;
+    background-image: url('../Images/background.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -102,6 +101,7 @@ iframe {
 @media (max-width: 768px) {
     body {
         user-select: none;
+        background-image: url("../Images/soja.png");
     }
     .page-select {
         height: 8vh;
