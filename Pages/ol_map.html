@@ -24,7 +24,31 @@
 
 <script src="https://openlayers.org/en/v6.9.0/build/ol.js"></script>
 <script>
+      // Array para armazenar as coordenadas [latitude, longitude]
+    let coordenadas = [-54.05, -24.55];
     
+    // Verifica se o navegador suporta geolocalização
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          // Armazena as coordenadas no array
+          coordenadas = [position.coords.latitude, position.coords.longitude];
+          
+          console.log("Coordenadas:", coordenadas);
+          console.log("Latitude:", coordenadas[0]);
+          console.log("Longitude:", coordenadas[1]);
+          
+          // Exemplo de uso:
+          document.getElementById("localizacao").textContent = 
+            `Coordenadas: ${coordenadas[0]}, ${coordenadas[1]}`;
+        },
+        function(error) {
+          console.error("Erro ao obter localização:", error.message);
+        }
+      );
+    } else {
+      console.error("Geolocalização não suportada");
+    }
     // Criação do mapa com estilo satélite
     var map = new ol.Map({
         target: 'map',
@@ -44,7 +68,7 @@
             })
         ],
         view: new ol.View({
-            center: ol.proj.fromLonLat([-54.05, -24.55]),
+            center: ol.proj.fromLonLat(coordenadas),
             zoom: 14,
             rotation: 0
         })
