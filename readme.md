@@ -13,7 +13,7 @@ Como fiz as Imagens?
 
 Objetivos do AgroMath: -O AgroMath tem como objetivo auxiliar proprietários rurais a calcular a área de suas plantações por meio da ferramenta de mapas integrada à plataforma. -Além de calcular a área do seu terreno, você pode selecionar o tipo de cultivo desejado, e o AgroMath estimará o lucro potencial da sua plantação.
 
-Como medir com o AgroMath? -Usar o AgroMath é simples e intuitivo, basta selecionar os limites do seu terreno no mapa clicando com o mouse em cada extremidade. Ao concluir, pressione a tecla Espaço, e o AgroMath calculará automaticamente a área da sua propriedade.
+Como medir com o AgroMath? -Usar o AgroMath é simples e intuitivo, basta abrir a página "MAPA", que vai abrir em sua localização, se você negar a permissão de localização do site, ele ira abrir o mapa no centro de Marechal Cândido Rondon, minha cidade, depois é só selecionar os limites do seu terreno no mapa clicando com o mouse em cada extremidade. Ao concluir, pressione a tecla Espaço, e o AgroMath calculará automaticamente a área da sua propriedade.
 
 Como o AgroMath consegue medir a área? -O Agromath mede a área usando as coordenadas dos pontos marcados no mapa. Ele forma um polígono com esses pontos e calcula o espaço dentro dele. O sistema usa fórmulas que consideram a distância real entre os pontos e a curvatura da Terra. Assim, ele mostra a área total em metros quadrados, hectares ou outras unidades.
 
